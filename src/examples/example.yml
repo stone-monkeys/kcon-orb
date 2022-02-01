@@ -1,8 +1,6 @@
 description: >
   kconnect is a CLI utility that can be used to discover and securely access Kubernetes clusters across multiple operating environments.
-
-  Based on the authentication mechanism chosen the CLI will discover Kubernetes clusters you are allowed to access in a target hosting environment (i.e. EKS, AKS, Rancher) and generate a kubeconfig for a chosen cluster.
-
+  \n
   As kconnect utilizes aws-iam-authenticator under the hood, please provide AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN as Environment Variables in your Project Settings, or as a context.
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
@@ -15,24 +13,24 @@ usage:
     use-my-orb:
       jobs:
         - kconnect
-jobs:
-  kconnect:
-    docker:
-      - image: cimg/base:2021.04
-    steps:
-      - attach_workspace:
-          at: .
-      - kconnect/install
-      - kconnect/configure:
-          config_file_path: https://raw.githubusercontent.com/stone-monkeys/CircleCI-sample-project/main/config.yaml
-      - kconnect/use:
-          cluster_provider: eks
-          cluster_id: arn:aws:eks:eu-west-1:660990364978:cluster/kconnect
-          alias: eks-test-kconnect
-      - run:
-          name: Test kconnect connection
-          command: kubectl get all
-      - kconnect/to:
-          alias: eks-test-kconnect
-      - kconnect/ls
-      - kconnect/version
+  jobs:
+    kconnect:
+      docker:
+        - image: cimg/base:2021.04
+      steps:
+        - attach_workspace:
+            at: .
+        - kconnect/install
+        - kconnect/configure:
+            config_file_path: https://raw.githubusercontent.com/stone-monkeys/CircleCI-sample-project/main/config.yaml
+        - kconnect/use:
+            cluster_provider: eks
+            cluster_id: arn:aws:eks:eu-west-1:660990364978:cluster/kconnect
+            alias: eks-test-kconnect
+        - run:
+            name: Test kconnect connection
+            command: kubectl get all
+        - kconnect/to:
+            alias: eks-test-kconnect
+        - kconnect/ls
+        - kconnect/version
