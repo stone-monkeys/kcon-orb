@@ -2,7 +2,8 @@ version: 2.1
 
 description: >
   kconnect is a CLI utility that can be used to discover and securely access Kubernetes clusters across multiple operating environments.
-  \n
+  
+  
   As kconnect utilizes aws-iam-authenticator under the hood, please provide AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN as Environment Variables in your Project Settings, or as a context.
 # What will your orb allow users to accomplish?
 # Descriptions should be short, simple, and informative.
