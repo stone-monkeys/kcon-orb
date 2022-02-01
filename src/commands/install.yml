@@ -4,11 +4,11 @@ description: >
 steps:
   - run:
       name: Install Kconnect
-      command: | 
+      command: |
         curl -fsSL -o install-kconnect.sh https://raw.githubusercontent.com/fidelity/kconnect/main/scripts/install-kconnect.sh
         chmod 700 install-kconnect.sh
         ./install-kconnect.sh
-        cd kconnect 
+        cd kconnect
 
         if [[ $EUID == 0 ]]; then export SUDO=""; else
           export SUDO="sudo";

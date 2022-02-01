@@ -1,14 +1,14 @@
 description: >
   Connect to a Kubernetes cluster provider and cluster
-  
-parameters: 
+
+parameters:
     cluster_provider:
         description: The use command requires a target provider name
         type: string
     cluster_id:
         description: Id of the cluster to use
         type: string
-    alias: 
+    alias:
         description: Friendly name to give to give the connection
         type: string
 steps:

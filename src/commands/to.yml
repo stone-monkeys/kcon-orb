@@ -2,7 +2,7 @@ description: >
   Reconnect to a connection history entry
 
 parameters:
-    alias: 
+    alias:
       description: Friendly name to give to give the connection
       type: string
 steps:
