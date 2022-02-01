@@ -18,8 +18,6 @@ usage:
       docker:
         - image: cimg/base:2021.04
       steps:
-        - attach_workspace:
-            at: .
         - kconnect/install
         - kconnect/configure:
             config_file_path: https://raw.githubusercontent.com/stone-monkeys/CircleCI-sample-project/main/config.yaml
