@@ -1,14 +1,28 @@
-# Orb Project Template
+# Kconnect Orb for CircleCI
 
 [![CircleCI Build Status](https://circleci.com/gh/stone-monkeys/kcon-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/stone-monkeys/kcon-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/db-cci-ns/k-connect.svg)](https://circleci.com/orbs/registry/orb/db-cci-ns/k-connect) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/stone-monkeys/kcon-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 
 
-A starter template for orb projects. Build, test, and publish orbs automatically on CircleCI with [Orb-Tools](https://circleci.com/orbs/registry/orb/circleci/orb-tools).
+This orb allows users to install and utilizes kconnects
 
-Additional READMEs are available in each directory.
+## Commands
+
+| Commands          | Meaning                                                           | Defaults |
+|-------------------|-------------------------------------------------------------------|----------|
+| install           | This command installs kconnect to your execution environment      | N/A      |
+| configure         | File or remote location to use to set the default configuration   | N/A      |
+| use               | Connect to a Kubernetes cluster provider and cluster              | N/A      |
+| to                | Reconnect to a connection history entry                           | N/A      |
+| version           | Display version & build information                               | N/A      |
+| ls                | Query the user’s connection history                               | N/A      |
 
 
+## How to Utilize this Orb
+
+Here are some rough steps to get started with this orb:
+
+[CircleCI Example] (https://github.com/stone-monkeys/kcon-orb/blob/main/src/examples/example.yml)
 
 ## Resources
 
