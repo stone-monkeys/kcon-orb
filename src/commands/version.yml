@@ -1,0 +1,6 @@
+description: >
+ Display version & build information
+steps:
+  - run:
+      name: Display the version of kconnect
+      command: kconnect version

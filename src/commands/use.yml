@@ -1,0 +1,17 @@
+description: >
+  Connect to a Kubernetes cluster provider and cluster
+  
+parameters: 
+    cluster_provider:
+        description: The use command requires a target provider name
+        type: string
+    cluster_id:
+        description: Id of the cluster to use
+        type: string
+    alias: 
+        description: Friendly name to give to give the connection
+        type: string
+steps:
+  - run:
+      name: Use Kconnect
+      command: kconnect use <<parameters.cluster_provider>> --cluster-id <<parameters.cluster_id>> --alias <<parameters.alias>>
