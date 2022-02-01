@@ -1,0 +1,11 @@
+description: >
+  The configure command creates kconnect configuration files and displays previously-defined configurations in a user-friendly display format
+
+parameters:
+  config_file_path:
+      description: File or remote location to use to set the default configuration
+      type: string
+steps:
+  - run:
+      name: Configure Kconnect
+      command: kconnect configure -f <<parameters.config_file_path>>

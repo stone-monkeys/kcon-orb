@@ -1,0 +1,7 @@
+description: >
+ Query the user’s connection history
+
+steps:
+  - run:
+      name: Display the user's connection history as a table
+      command: kconnect ls

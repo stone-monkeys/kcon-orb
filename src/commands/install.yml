@@ -1,0 +1,24 @@
+description: >
+  This command installs kconnect to your execution environment
+
+parameters:
+  install-path:
+      description: Install binaries to this location (if possible)
+      type: string
+      default: /usr/local/bin
+steps:
+  - run:
+      name: Install Kconnect
+      command: |
+        curl -fsSL -o install-kconnect.sh https://raw.githubusercontent.com/fidelity/kconnect/main/scripts/install-kconnect.sh
+        chmod 700 install-kconnect.sh
+        ./install-kconnect.sh
+        cd kconnect
+
+        if [[ $EUID == 0 ]]; then export SUDO=""; else
+          export SUDO="sudo";
+        fi
+
+        $SUDO cp kconnect <<parameters.install-path>>
+        $SUDO cp aws-iam-authenticator <<parameters.install-path>>
+        $SUDO cp kubectl <<parameters.install-path>>

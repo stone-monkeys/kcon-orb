@@ -1,0 +1,11 @@
+description: >
+  Reconnect to a connection history entry
+
+parameters:
+    alias:
+      description: Friendly name to give to give the connection
+      type: string
+steps:
+  - run:
+      name: Connect to a given cluster
+      command: kconnect to <<parameters.alias>>
